@@ -11,7 +11,7 @@ const config = {
   url: 'https://docs.valydar.com',
   baseUrl: '/',
 
-  organizationName: '954alberto',
+  organizationName: 'valydar',
   projectName: 'valydar',
 
   onBrokenLinks: 'throw',
@@ -45,7 +45,7 @@ const config = {
           { type: 'docSidebar', sidebarId: 'guideSidebar', position: 'left', label: 'Guides' },
           { type: 'docSidebar', sidebarId: 'apiSidebar', position: 'left', label: 'API Reference' },
           { href: 'https://portal.valydar.com', label: 'Get API Key', position: 'right' },
-          { href: 'https://github.com/valydar/valydar', label: 'GitHub', position: 'right' },
+          { href: 'https://github.com/valydar/api', label: 'GitHub', position: 'right' },
         ],
       },
       footer: {
@@ -62,7 +62,7 @@ const config = {
           {
             title: 'Community',
             items: [
-              { label: 'GitHub', href: 'https://github.com/valydar/valydar' },
+              { label: 'GitHub', href: 'https://github.com/valydar/api' },
               { label: 'Discord', href: '#' },
             ],
           },
