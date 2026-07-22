@@ -139,4 +139,4 @@ Full type definitions are included:
 import Valydar, { Verification, Document, FaceMatchResult } from '@valydar/sdk';
 ```
 
-See [`valydar.d.ts`](https://github.com/954alberto/valydar/blob/main/sdk/valydar.d.ts) for all types.
+See [`valydar.d.ts`](https://github.com/valydar/sdk/blob/main/valydar.d.ts) for all types.
