@@ -8,7 +8,31 @@ Valydar uses API keys for authentication. All requests must include your key in 
 
 ## Getting an API Key
 
-Contact [support@valydar.com](mailto:support@valydar.com) to request a sandbox or production API key. You can also create additional keys via the [Admin API](api/admin).
+Sign up at [portal.valydar.com](https://portal.valydar.com) to create an account, add a payment method, and generate API keys. You can also create additional keys via the [Admin API](api/admin).
+
+### User Signup & Signin (JWT)
+
+For account management, Valydar also supports user authentication with JWT tokens:
+
+```bash
+# Sign up
+curl -X POST https://api.valydar.com/auth/signup \
+  -H "Content-Type: application/json" \
+  -d '{"email":"you@company.com","password":"your-password","name":"Your Name"}'
+
+# Sign in
+curl -X POST https://api.valydar.com/auth/signin \
+  -H "Content-Type: application/json" \
+  -d '{"email":"you@company.com","password":"your-password"}'
+# Response: { "token": "...", "user": {...} }
+```
+
+The JWT token expires after 30 days. Use it like an API key:
+
+```bash
+curl -X GET https://api.valydar.com/auth/me \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"
+```
 
 ## Using Your Key
 
