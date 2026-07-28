@@ -34,6 +34,29 @@ curl -X GET https://api.valydar.com/auth/me \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 
+### Email Verification
+
+New accounts start with `email_verified: false`. Verify your email:
+
+```bash
+# Token is returned in signup response (dev) or sent via email (prod)
+curl -X GET "https://api.valydar.com/auth/verify-email?token=YOUR_VERIFICATION_TOKEN"
+```
+
+### Password Reset
+
+```bash
+# Request a reset token
+curl -X POST https://api.valydar.com/auth/forgot-password \
+  -H "Content-Type: application/json" \
+  -d '{"email":"you@company.com"}'
+
+# Reset password with the token
+curl -X POST https://api.valydar.com/auth/reset-password \
+  -H "Content-Type: application/json" \
+  -d '{"token":"RESET_TOKEN","new_password":"new-secure-password"}'
+```
+
 ## Using Your Key
 
 Include the key in the `Authorization: Bearer` header:

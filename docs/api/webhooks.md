@@ -75,6 +75,17 @@ Returns the last 50 webhook delivery attempts for your account.
 ]
 ```
 
+## Stripe Billing Webhook
+
+Valydar also listens for Stripe events at `/billing/webhook` to update subscription status. This is configured automatically and doesn't require user setup.
+
+**Events handled:**
+- `checkout.session.completed` — activates the user's payment status
+- `customer.subscription.updated` — tracks subscription changes
+- `customer.subscription.deleted` — handles cancellations
+
+Webhook signatures are verified using HMAC-SHA256 with the configured `STRIPE_WEBHOOK_SECRET`.
+
 ## Replay Delivery
 
 ```bash
