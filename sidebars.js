@@ -43,8 +43,11 @@ const sidebars = {
     'api/face-match',
     'api/doc-liveness',
     'api/active-liveness',
+    'api/nfc',
+    'api/deepfake',
     'api/webhooks',
     'api/admin',
+    'api/demo',
   ],
 };
 
