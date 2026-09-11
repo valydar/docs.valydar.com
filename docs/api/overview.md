@@ -10,8 +10,8 @@ Valydar is a REST API. All requests use JSON and require an API key.
 
 | Environment | Base URL |
 |---|---|
-| Sandbox | `https://api.dev.valydar.com` |
-| Production | `https://api.valydar.com` |
+| Sandbox (dev) | `https://api.dev.valydar.com` |
+| Production | coming soon |
 
 ## Authentication
 
@@ -44,8 +44,22 @@ All requests require an API key in the `Authorization: Bearer` header:
 | `POST` | `/verifications/{id}/selfie` | Upload a selfie |
 | `POST` | `/verifications/{id}/face-match` | Run face match |
 | `POST` | `/verifications/{id}/documents/{doc_id}/liveness` | Run document liveness |
+| `POST` | `/verifications/{id}/selfie-liveness` | Passive selfie liveness |
+| `POST` | `/verifications/{id}/deepfake` | Detect deepfake / AI-generated selfie |
 | `POST` | `/verifications/{id}/active-liveness/challenge` | Generate active liveness challenge |
 | `POST` | `/verifications/{id}/active-liveness/verify` | Verify active liveness |
+
+### NFC
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/verifications/{id}/nfc` | Verify ePassport chip (passive/active/chip auth) |
+
+### Live Demo
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/demo/verify` | Public no-auth demo (document, face match, AML, NFC, liveness) |
 
 ### Admin
 

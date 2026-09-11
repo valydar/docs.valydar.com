@@ -16,12 +16,12 @@ For account management, Valydar also supports user authentication with JWT token
 
 ```bash
 # Sign up
-curl -X POST https://api.valydar.com/auth/signup \
+curl -X POST https://api.dev.valydar.com/auth/signup \
   -H "Content-Type: application/json" \
   -d '{"email":"you@company.com","password":"your-password","name":"Your Name"}'
 
 # Sign in
-curl -X POST https://api.valydar.com/auth/signin \
+curl -X POST https://api.dev.valydar.com/auth/signin \
   -H "Content-Type: application/json" \
   -d '{"email":"you@company.com","password":"your-password"}'
 # Response: { "token": "...", "user": {...} }
@@ -30,7 +30,7 @@ curl -X POST https://api.valydar.com/auth/signin \
 The JWT token expires after 30 days. Use it like an API key:
 
 ```bash
-curl -X GET https://api.valydar.com/auth/me \
+curl -X GET https://api.dev.valydar.com/auth/me \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 
@@ -40,19 +40,19 @@ New accounts start with `email_verified: false`. Verify your email:
 
 ```bash
 # Token is returned in signup response (dev) or sent via email (prod)
-curl -X GET "https://api.valydar.com/auth/verify-email?token=YOUR_VERIFICATION_TOKEN"
+curl -X GET "https://api.dev.valydar.com/auth/verify-email?token=YOUR_VERIFICATION_TOKEN"
 ```
 
 ### Password Reset
 
 ```bash
 # Request a reset token
-curl -X POST https://api.valydar.com/auth/forgot-password \
+curl -X POST https://api.dev.valydar.com/auth/forgot-password \
   -H "Content-Type: application/json" \
   -d '{"email":"you@company.com"}'
 
 # Reset password with the token
-curl -X POST https://api.valydar.com/auth/reset-password \
+curl -X POST https://api.dev.valydar.com/auth/reset-password \
   -H "Content-Type: application/json" \
   -d '{"token":"RESET_TOKEN","new_password":"new-secure-password"}'
 ```
