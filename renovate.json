@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(chore)"
+  ],
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+      "groupName": "Docusaurus dependencies",
+      "groupSlug": "npm-deps"
+    },
+    {
+      "matchManagers": ["dockerfile"],
+      "groupName": "Docker base images",
+      "groupSlug": "docker-base"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions",
+      "groupSlug": "github-actions"
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
+  "schedule": ["before 6am on Monday"]
+}
